@@ -1,0 +1,19 @@
+first creating model to ensure what data we require
+
+then create schemas for validating the schemas
+
+connect db
+
+setup resend email and react email(email to be sent to user)
+
+write api's
+    1. for sign-up manual
+        workflow in video
+    2. for sign-in next auth
+        documentation and video from 3:06:27
+        change types of module as done in next-auth.d.ts
+    3. verify code
+    4. accepting messages status
+    5. getting messages (aggregation pipeline)
+    6. send message
+    7. suggest message (used groq , but check for free trial)
