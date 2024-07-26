@@ -17,3 +17,13 @@ write api's
     5. getting messages (aggregation pipeline)
     6. send message
     7. suggest message (used groq , but check for free trial)
+    8. delete api
+
+    9.
+
+install shadcn
+    1. work with forms for sign-up (react form)
+    2. verify code (dynamic url eg. [username])
+    3. signin page
+    4. dashboard
+    5. Home page

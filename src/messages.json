@@ -1,0 +1,17 @@
+[
+    {
+        "title":"Message from 1233",
+        "content": "How you doing?",
+        "received": "10 minutes ago" 
+    },
+    {
+        "title":"Message from FellowGamer",
+        "content": "Nice App",
+        "received": "2 hours ago" 
+    },
+    {
+        "title":"Message from MysteryGuest",
+        "content": "Book recomendations?",
+        "received": "10 days ago" 
+    }
+]
