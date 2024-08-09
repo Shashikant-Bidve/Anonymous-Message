@@ -8,9 +8,9 @@ import mongoose from "mongoose";
 export async function GET(request:Request) {
     await dbConnect();
     const session = await getServerSession(authOptions);
-    const user = session?.user as User;
+    const _user = session?.user;
 
-    if(!session || !user){
+    if(!session || !_user){
         return Response.json({
             success: false,
             message: "Not Authenticated"
@@ -19,11 +19,11 @@ export async function GET(request:Request) {
         })
     }
     // necesarry for aggregation pipline
-    const userId = new mongoose.Types.ObjectId(user._id);
+    const userId = new mongoose.Types.ObjectId(_user._id);
     try {
         // aggregation pipeline
         const user = await UserModel.aggregate([
-            { $match: {id: userId}},
+            { $match: {_id: userId}},
             { $unwind: '$messages'},
             { $sort: {'messages.createdAt': -1}},
             { $group: {_id: '$_id', messages: {$push: '$messages'}}}
@@ -34,7 +34,7 @@ export async function GET(request:Request) {
                 success: false,
                 message: "User not found"
             },{
-                status: 401
+                status: 404
             })
         }
 
